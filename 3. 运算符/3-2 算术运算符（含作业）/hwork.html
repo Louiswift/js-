@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        // 利息计算器
+        var C = 35;
+        var F = (9 / 5) * C + 32;
+        console.log("摄氏度为" + C + "度，华氏温度为" + F + "度");
+
+        document.write(" ")
+        //利息计算其
+        var principal = 10000;
+        var Months = 12;
+        var AnnualInterestRate = 0.04;
+        var interest = principal * AnnualInterestRate / 12 * Months;
+        console.log("本金：" + principal + "，年利率：" + AnnualInterestRate + "，月数：" + Months + "，利息：" + interest);
+    </script> -->
+
+    <script>
+        //弹出一个窗口 输入 摄氏温度
+        var C = parseInt(window.prompt("摄氏度"));
+        //转换为 华氏温度 经过此过程
+        var F = 9 / 5 * C + 32;
+        //输出华氏温度 转换成功
+        document.write("摄氏度为" + C + "度，华氏度为" + F +"度");
+        
+        var money = parseInt(window.prompt("输入本金"));
+        var month = 12;
+        var nll = 3.6;
+        var resut = money * nll / 100 / 12 * month;
+        document.write("利息为" + resut);
+        
+    </script>
+</body>
+
+</html>

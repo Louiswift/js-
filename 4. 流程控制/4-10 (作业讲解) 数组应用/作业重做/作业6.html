@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 6. 定义一个用户数列，数组的每一项是一个用户对象，用户对象中包含账号密码，随意初始化一些对象放入数组中。然后提示用户输入账号和密码，判断是否成功
+        var user = [{
+            ID: 'abc',
+            PWD: '123456'
+        }, {
+            ID: 'abc1',
+            PWD: '123456'
+        }, {
+            ID: 'abc2',
+            PWD: '123456'
+        }, {
+            ID: 'abc3',
+            PWD: '123456'
+        }];
+        var loginID = prompt('请输入你的账号');
+        var loginPWD = prompt('请输入你的密码');
+        var isFind = false;
+        for (i = 0; i < user.length; i++) {
+            var u = user[i];
+            if (u.ID === loginID && u.PWD === loginPWD) {
+                isFind = true;
+                break
+            }
+        }
+        if (isFind) {
+            console.log('登陆成功')
+        } else {
+            console.log('登陆失败')
+        }
+    </script>
+</body>
+
+</html>

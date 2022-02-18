@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // console.log(1 > 3 || 10); //输出：10
+
+        // console.log(undefined || "abc"); //输出：abc
+
+        // console.log(0 || null || undefined || 1 || null || NaN); //输出：1
+
+        var obj = {
+            name:'www',
+        };
+
+        //对象中如果没有年龄，则将年龄赋值为18
+        obj.age = obj.age || 18;
+        obj.age = obj.age === undefined && 18;
+        console.log(obj.age);
+    </script>
+</body>
+
+</html>

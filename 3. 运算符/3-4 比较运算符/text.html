@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = {};
+        var b = {};
+        console.log(1 == 1);
+        console.log(1 != 1);
+        console.log("abc" == "abc");
+        console.log("abc" !== "abc");
+        console.log(a == b); // false
+
+        console.log(null == undefined) //true;
+        console.log(null != undefined); //false
+        console.log(null == 0); // false
+        console.log(undefined == 0); //false
+        console.log("1" == 1); //true
+        console.log(ture == 1); //true
+        console.log(ture == 2); //false
+        console.log(ture == "1"); //true
+        console.log({} == 0); //false
+
+        console.log(1 === true); //false
+    </script>
+</body>
+</html>

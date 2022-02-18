@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 5. 斐波拉契数列是这样一种数列：1 1 2 3 5 8 13 .....
+        数列前俩位为1.第n位=第n-1位+第n-2位
+        让用户输入斐波那契数列的长度，在控制台中打印该长度的斐波拉契数列，效果如下*/
+        var len = prompt('数组长度');
+        var arr = [];
+        for(i = 0; i < len; i++){
+            if(i === 0 || i === 1){
+                arr[i] = 1
+            }else{
+                arr[i] = arr[i-1] + arr[i -2]
+            }
+        }
+        console.log(arr)
+
+    </script>
+</body>
+
+</html>

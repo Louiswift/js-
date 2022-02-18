@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 将一个字符串中单词之间的空格去掉，然后把每个单词首字母转换成大写
+        // 比如 "hello world" -> HelloWorld"
+
+        var str = "hello world";
+        var newArr = str.split(' ');
+        var result = newArr.map(function(item,i){
+            return item = item[0].toLocaleUpperCase() + item.substring(1)
+        });
+        console.log(newArr)
+        console.log(result.join(''));
+    </script>
+</body>
+
+</html> 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [{
+            name: 'a',
+            age: 11,
+            score: 54
+        }, {
+            name: 'b',
+            age: 18,
+            score: 68
+        }, {
+            name: 'c',
+            age: 14,
+            score: 62
+        }];
+
+        //得到及格的学生   (找第一个的下标)
+        var index = arr.findIndex(function (item) {
+            return item.score >= 60
+        });
+        console.log(index)
+
+        // 得到及格的学生  (找第一个)
+        var result = arr.find(function (item) {
+            return item.score >= 60
+        });
+        console.log(result)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //11. 判断数字233是不是素数。
+        var num = 233;
+        var result = 0;
+        for (i = 1; i <= num; i++) {
+            if(num % i === 0){
+                result++
+            }
+        }
+        if(result === 2){
+            console.log('是');
+        }
+        else{
+            console.log('不是');
+        }
+    </script>
+</body>
+
+</html>

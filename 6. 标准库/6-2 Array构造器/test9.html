@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [85, 15, 65, 48, 95, 74, 82, 66];
+        var newArr = arr.map(function (item, i) {
+            return {
+                name: '学生' + (i + 1),
+                score: item
+            }
+        });
+        console.log(newArr)
+
+        // 得到一个学生的姓名数组
+        var result = newArr.map(function(item){
+            return item.name
+        });
+        console.log(result)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 9. 有一个数组，存放了一些数字，找出出现频率最高的数字
+        var nums = [2, 2, 2, 2, 2, 2, 2, 5, 6, 8,515, 515, 27, 55, 4, 66, 8, 9, 8];
+        // 得到记录对象
+        var record = {};
+        for(i = 0; i < nums.length; i++){
+            var n = nums[i];
+            if(record[n]){
+                record[n]++
+            }else{
+                record[n] = 1
+            }
+        }
+        console.log(record)
+        var result;
+        for(var prop in record){
+            if(!result || record[prop] > result.fre){
+                result = {
+                    number: prop,
+                    fre: record[prop]
+                }
+            }
+        }
+        console.log(`${result.number}出现最多，出现次数为${result.fre}`)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var money = prompt("请输入存款金额");
+        var year = prompt("请输入存款年限");
+        if (money < 500000) {
+            result = money * 0.04 * year;
+            console.log(result);
+        } else if (money >= 500000 && money < 2000000) {
+            result = money * 0.045 * year;
+            console.log(result);
+        } else if (money > 2000000) {
+            result = money * 0.05 * year;
+            ew = result * 0.1;
+            console.log(result);
+        }
+    </script>
+</body>
+
+</html>

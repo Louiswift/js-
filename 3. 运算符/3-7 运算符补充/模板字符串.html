@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var user = {
+            age: 18,
+            name: '王某',
+            gender: '男',
+
+        };
+        // 输出我叫xxx，今年xx岁，性别是xx，目前已成年(未成年)
+        console.log('我叫' + user.name +
+            '，今年' + user.age +
+            '岁，性别是' + user.gender +
+            '，目前' + (user.age >= 18? '已成年' : '未成年'));
+        console.log(`我叫${user.name}，今年${user.age}岁，性别是${user.gender}，目前${user.age>=18?'已成年':'未成年'}`);
+    </script>
+</body>
+
+</html>

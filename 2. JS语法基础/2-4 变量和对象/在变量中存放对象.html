@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var user = {
+            account:"abc",
+            pwd:"123456",
+            gender:"男",
+            isvip:false,
+            age:18,
+            address: {
+                country:"中国",
+                city:"浙江",
+            },
+        };
+        console.log(user.address.city);
+        // console.log(user, typeof user); 
+        //输出user属于什么类型
+        // console.log(user.account); 
+        //输出对象的账号
+        // console.log(typeof user.account); 
+        //输出对象的账号属于什么类型
+
+        // console.log(user.sex, typeof user.sex);
+        
+        // var user2 = {};
+        // console.log(user2.account)
+
+        // user.pwd = "654321";
+        // //将密码更改为654321
+        // console.log(user.pwd);
+
+        // user.paypwd = "a8a8a8"; //相当于添加了属性Paypwd
+        // console.log(user);
+
+        // var user2;
+
+        // user2.account = "dwfw"; //报错，原始类型undefined中不可以有属性
+        // console.log(user2);
+
+        // var user2={
+        //     account:user.account,
+        // };
+        // console.log(user2);
+        // console.log(user2.pwd)
+
+        var user2 = {};
+        user2.acc = user.account;
+        console.log(user2.acc);
+
+    </script>
+</body>
+</html>

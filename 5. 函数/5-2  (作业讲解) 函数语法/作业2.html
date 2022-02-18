@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="/common/MyFunction.js"></script>
+    <script>
+        function begin(num) {
+            var num = prompt('请输入大于2的偶数');
+            if (isNaN(num) || num < 2 || isOdd(num)) {
+                console.log('输入有误');
+                return
+            }
+            for (var i = 2; i <= num - 2; i++) {
+                var j = num - i;
+                if (isPrime(i) && isPrime(j)) {
+                    console.log(`${num} = ${i} + ${j}`)
+                    return
+                }
+            }
+        }
+        begin()
+    </script>
+</body>
+
+</html>

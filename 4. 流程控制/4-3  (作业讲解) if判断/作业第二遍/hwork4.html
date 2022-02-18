@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var money = prompt('输入你的本金');
+        var year = prompt('存款年限');
+        if(isNaN(money) || isNaN(year)){
+            console.log('输入有误');
+        }
+        else{
+            var rat = 0.4;
+            var result;
+            if(money < 500000){
+                result = money * rat * year;
+                console.log(result);
+            }
+            else if(money >= 500000){
+                rat = 0.45;
+                result = money * rat * year;
+                console.log(result);
+            }
+            else if(money >= 2000000){
+                result = money * rat * year;
+                result += result * 0.1;
+                console.log(result);
+            }
+        }
+    </script>
+</body>
+</html>

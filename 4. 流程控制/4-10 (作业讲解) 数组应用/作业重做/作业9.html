@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var nums = [2, 5, 8, 9, 2, 2, 6, 3, 6, 4, 5, 2, 2, 2, 2];
+
+        // 输出：2出现频率最高，出现7次
+        // 得到记录对象 
+
+        var record = {}; // 记录对象
+        for (i = 0; i < nums.length; i++) {
+            var n = nums[i];
+            if (record[n]) {
+                record[n]++
+            } else {
+                record[n] = 1;
+            }
+        }
+
+        var result; // 结果
+        for (var prop in record) {
+            if(!result || record[prop] > record.frequency){
+                result = {
+                    number:prop,
+                    frequency:record[prop]
+                }
+            }
+        }
+        console.log(result)
+    </script>
+</body>
+
+</html>

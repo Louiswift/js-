@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //15. 将猜拳游戏升级，记录系统和玩家的积分，获胜者加1分，，平局和输者不计分
+         console.log('游戏开始')
+         var round = 1;
+         var pcScore = 0;
+         var plearScore = 0;
+         while(true){
+             //轮次
+             console.log(`===========第${round}轮============`);
+             console.log(`系统得分：${pcScore}，玩家得分：${plearScore}`)
+             var fist = prompt('请输入 (石头、剪刀、布)');
+             if(fist === null){
+                 //点击取消
+                 console.log(`游戏结束`);
+                 break
+             }
+             if(fist === '石头' || fist === '剪刀' || fist === '布'){
+                 //出拳有效
+                 console.log(`玩家出拳：${fist}`)
+                var pcfist = Math.random();//系统随机出拳
+                 if(pcfist <0.333){
+                     pcfist = '石头'
+                 }
+                 else if (pcfist < 0.666){
+                     pcfist = '剪刀'
+                 }
+                 else{
+                     pcfist = '布'
+                 }
+                 console.log(`系统出拳：${pcfist}`);
+             }
+             else{
+                 // 出拳无效
+               console.log('输入有误，请重新输入')
+               continue
+             }
+             if(fist === '石头' && pcfist === '剪刀' ||
+             fist === '剪刀' && pcfist === '布' ||
+             fist === '布' && pcfist === '石头'){
+                 console.log('玩家胜利！');
+                 plearScore++
+             }
+             else if(fist === pcfist){
+                 console.log('双方平局');
+             }
+             else{
+                 console.log('系统胜利！');
+                 pcScore++
+             }
+             round++
+         }
+         console.log('游戏结束');
+         console.log(`系统得分：${pcScore} 玩家得分：${plearScore}`);
+    </script>
+</body>
+</html>

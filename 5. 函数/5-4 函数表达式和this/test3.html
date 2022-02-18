@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name:'王强',
+            age:18,
+            sayhello:function(){
+                console.log(`我叫${this.name},今年${this.age}岁了`)
+            }
+        }
+        obj.sayhello();
+    </script>
+</body>
+</html>

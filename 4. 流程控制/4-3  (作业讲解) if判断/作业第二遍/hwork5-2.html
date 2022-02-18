@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var fist = prompt('请输入(石头 剪刀 布)');
+        if(fist === '石头' || fist === '剪刀' || fist === '布'){
+            var jsq = Math.random();
+            var pcfist;
+            if(jsq < 0.333){
+                pcfist = '石头'
+            }
+            else if (jsq < 0.6666){
+                pcfist = '剪刀'
+            }
+            else{
+                pcfist = '布'
+            }
+            if(fist === '石头' && pcfist === '剪刀' ||
+            fist === '剪刀' && pcfist === '布' ||
+            fist === '布' && pcfist === '石头'){
+                console.log(`我方输入${fist}，对方输入${pcfist}`)
+                console.log('我方胜利')
+            }
+            else if(fist === pcfist){
+                console.log(`我方输入${fist}，对方输入${pcfist}`)
+                console.log('平局');
+            }
+            else{
+                console.log(`我方输入${fist}，对方输入${pcfist}`)
+                console.log('我方输了')
+            }
+        }
+    </script>
+</body>
+</html>
