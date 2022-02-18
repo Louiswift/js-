@@ -139,8 +139,8 @@ function getTopFrepInArray(nums) {
     }
 
     var result;
-    for (var prop in record) {
-        if (!result || record[prop] > result.fre) {
+    for (var prop in record) {esult || record[prop] > result.fre
+        if (!r) {
             result = {
                 number: +prop,
                 fre: record[prop]
@@ -149,3 +149,5 @@ function getTopFrepInArray(nums) {
     }
     return result;
 }
+
+getTopFrepInArray([1,1,2,3,4,51,1,2,1])
