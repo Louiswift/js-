@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 从一个标准的身份证号码中获取出用户的出生年月日和性别，保存到对象中
+
+        // 例如，"524713199703020014"
+
+        // 得到对象：
+        // birthYear: 1997
+        // birthMonth: 3
+        // birthDay: 2
+        // gender: '男' // 性别看倒数第二位，奇数为男，偶数为女
+
+        var sfz = "524713199703020014";
+        sfz.split(' ').join((''));
+      
+        var result = {
+            birthYear: sfz.substring(6,10),
+            birthMonth:'',
+            birthDay:'',
+            gender:''
+        }
+        if(sfz.charAt(10) == 0){
+            result.birthMonth = sfz.charAt(11);
+        }else{
+            result.birthMonth = sfz.charAt(10) +sfz.charAt(11); 
+        }
+        if(sfz.charAt(12) == 0){
+            result.birthDay = sfz.charAt(13)
+        }else{
+            result.birthDay = sfz.charAt(12)+sfz.charAt(13)
+        }
+        if(sfz.charAt(16) % 2 == 0){
+            result.gender = '女'
+        }else{
+            result.gender = '男' 
+        }
+        console.log(sfz)
+        console.log(result)
+    </script>
+</body>
+
+</html>

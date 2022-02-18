@@ -11,11 +11,19 @@
 <body>
     <script>
         // 书写一个函数，产生一个指定长度的随机字符串，字符串中只能包含大写字母、小写字母、数字
-        function getRadon(length){
-            var str = new Array(length);
+        // function getRadon(length) {
+        //     var str = new Array(length);
 
-        }
-        var str = new Array(20);
+        // }
+        // getRadon(10);
+        var str = new Array(10);
+        var r = ['a','b']
+        var newArr = r.map(function(item,i){
+            return str = item[i]
+        })
+        console.log(str);
+        console.log(r);
+        console.log(newArr);
     </script>
 </body>
 
