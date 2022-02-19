@@ -12,13 +12,7 @@
     <script>
         // 将字符串按照字符编码的顺序重新升序排序
         var str = 'zacx8我6'
-        var result = str.split('').map(function (item) {
-            return item.charCodeAt();
-        }).sort(function (a, b) {
-            return a - b
-        }).map(function (item) {
-            return String.fromCharCode(item);
-        }).join('');
+        var result= Array.from(str).sort().join('');
         console.log(result)
     </script>
 </body>
