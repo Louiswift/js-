@@ -203,6 +203,6 @@ var MyFunction = {
      * @param {*} max 最大值（取不到最大值）
      */
     getRandom: function (min, max) {
-        return parseInt(Math.random() * (max - min) + min);
+        return parseInt(Math.random() * (max + 1 - min) + min);
     }
 }
