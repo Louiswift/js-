@@ -9,21 +9,29 @@
 </head>
 
 <body>
+    <script src="../../common/BetterFunction.js"></script>
     <script>
         // 书写一个函数，产生一个指定长度的随机字符串，字符串中只能包含大写字母、小写字母、数字
-        // function getRadon(length) {
-        //     var str = new Array(length);
+        function getRadomString(len) {
+            var template = '';
+            for (var i = 65; i < 65 + 26; i++) {
+                template += String.fromCharCode(i)
+            }
+            for (var i = 97; i < 97 + 26; i++) {
+                template += String.fromCharCode(i)
+            }
+            for (var i = 48; i < 48 + 10; i++) {
+                template += String.fromCharCode(i)
+            }
 
-        // }
-        // getRadon(10);
-        var str = new Array(10);
-        var r = ['a','b']
-        var newArr = r.map(function(item,i){
-            return str = item[i]
-        })
-        console.log(str);
-        console.log(r);
-        console.log(newArr);
+            var result = '';
+            for(var i = 0; i <len;i++){
+                var index = MyFunction.getRandom(0,template.length-1)
+                result += template[index]
+            }
+            console.log(result)
+        }
+        getRadomString(3);
     </script>
 </body>
 

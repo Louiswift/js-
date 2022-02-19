@@ -108,7 +108,7 @@ var MyFunction = {
      * @param {*} nums 
      * @returns 
      */
-    getTopFrepInArray: function (nums) {
+    getTopFreqInArray: function (nums) {
         var record = {};
         for (i = 0; i < nums.length; i++) {
             var n = nums[i];

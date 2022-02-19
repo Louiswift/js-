@@ -13,7 +13,9 @@
     <script>
         // 找到某个字符串中出现最多的字符，打印字符和它出现的次数
         var str = 'abcaacdefwefweaaa';
-        console.log(MyFunction.getTopFrepInArray(str))
+        var arr = Array.from(str);
+        var obj= MyFunction.getTopFreqInArray(arr)
+        console.log(obj)
     </script>
 </body>
 

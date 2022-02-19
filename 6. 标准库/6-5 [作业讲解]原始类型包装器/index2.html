@@ -14,12 +14,10 @@
         // 比如 "hello world" -> HelloWorld"
 
         var str = "hello world";
-        var newArr = str.split(' ');
-        var result = newArr.map(function(item,i){
+        var newArr = str.split(' ').map(function(item){
             return item = item[0].toLocaleUpperCase() + item.substring(1)
-        });
+        }).join('');
         console.log(newArr)
-        console.log(result.join(''));
     </script>
 </body>
 
