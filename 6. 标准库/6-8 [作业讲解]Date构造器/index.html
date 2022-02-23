@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //2. 给定用户的生日（年、月、日），计算该用户的年龄
+        function getUseryear(year, month, day) {
+            var d1 = new Date();
+            var d2 = new Date(year, month - 1, day);
+            var result = (d1 - d2) / (365*24*60*60*1000)
+            return parseInt(result)
+        }
+        console.log(getUseryear(2004, 8, 11));
+    </script>
+</body>
+
+</html>
