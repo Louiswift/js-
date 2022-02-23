@@ -204,5 +204,33 @@ var MyFunction = {
      */
     getRandom: function (min, max) {
         return parseInt(Math.random() * (max + 1 - min) + min);
+    },
+    
+    /**
+     * 用于返回一个友好的日期字符串格式
+     * @param {*} date 时间
+     */
+    getDateString: function (date) {
+        year = date.getFullYear().toString().padStart(4, '0');
+        month = (date.getMonth() + 1).toString().padStart(2, '0');
+        day = date.getDate().toString().padStart(2, '0');
+
+        hour = date.getHours().toString().padStart(2, '0');
+        minute = date.getMinutes().toString().padStart(2, '0');
+        second = date.getSeconds().toString().padStart(2, '0');
+        return `${year}-${month}-${day} ${hour}:${minute}:${second}`
+    },
+
+    getAge: function(year,month,day){
+        var d = new Date();
+        var dec = d.getFullYear() - year;
+        if(month === 2&&day === 29&&!this.isLeap(d.getFullYear())){
+            day = 28;
+        }
+        var birthdayThisYear = new Date(d.getFullYear(),month-1,day);
+        if(birthdayThisYear>d){
+            dec--
+        }
+        return dec
     }
 }
