@@ -21,9 +21,10 @@
         var d = new Date();
         var year = d.getFullYear();
         var month = d.getMonth() + 1;
-        var tomonth = MyFunction.getDays(year, month);
+        // var days = MyFunction.getDays(year, month);
+        var days = new Date(d.getFullYear(),d.getMonth()+1,0).getDate();
         d.setDate(1)
-        for (i = 1; i <= tomonth; i++) {
+        for (i = 1; i <= days; i++) {
             const List = ['日','一','二','三','四','五','六']
             List[d.getDay()]
             d.setDate(i)
