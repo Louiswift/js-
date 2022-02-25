@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var reg1 = /[,\- ]/;
+        var s = 'hello world\njava\tyes';
+        // 将空白字符串替换为逗号
+        s = s.replace(/\s*\b[a-z]\s*/g,function(match){
+            return match.toLocaleUpperCase().trim()
+        });
+        console.log(s)
+
+
+        // 按照逗号，空格，横杠，制表符进行分割
+        // var result = s.split(reg1);
+        // console.log(s,result)
+        
+    </script>
+</body>
+
+</html>
