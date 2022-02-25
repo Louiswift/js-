@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 书写一个正则表达式，去匹配一个字符串，得到匹配次数，和匹配的结果
+        var reg = /abc/g;
+        var s = 'abc123abc123abc';
+        var recond = 0;
+        while(reg.test(s)){
+            recond++
+        }
+        console.log(`匹配次数：${recond}次\n匹配结果：${reg.source}`)
+    </script>
+</body>
+</html>

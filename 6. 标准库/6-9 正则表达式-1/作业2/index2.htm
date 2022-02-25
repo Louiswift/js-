@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 2. 得到一个字符串中中文字符的数量
+        var reg = /[\u4e00-\u9FA5]/g;
+        var s = 'a字b符c串d出123现456了789几11次22';
+        var recond = 0;
+        while(reg.test(s)){
+            recond++
+        }
+        console.log(`中文数量：${recond}`)
+
+    </script>
+</body>
+</html>
