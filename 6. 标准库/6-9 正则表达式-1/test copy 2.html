@@ -1,31 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
 
-<body>
-    <script>
-        var reg1 = /\d+/g;
-        var s = '1234abc123abc';
-        
-        // 得到所有的匹配结果和位置
-        while(true){
-            var result = reg1.exec(s);
-            if(!result){
-                break;
+    <body>
+        <script>
+            var reg1 = /\d+/g;
+            var s = '1234abc123abc';
+
+            // 得到所有的匹配结果和位置
+            while (true) {
+                var result = reg1.exec(s);
+                if (!result) {
+                    break;
+                }
+                console.log(`匹配结果:${result[0]}，出现位置:${result.index}`)
             }
-            console.log(`匹配结果:${result[0]}，出现位置:${result.index}`)
-        }
-        console.log('')
-        while(result = reg1.exec(s)){
-            console.log(`匹配结果:${result[0]}，出现位置:${result.index}`)
-        }
-    </script>
-</body>
+            console.log('')
+            while (result = reg1.exec(s)) {
+                console.log(`匹配结果:${result[0]}，出现位置:${result.index}`)
+            }
+        </script>
+    </body>
 
-</html>
+    </html>
