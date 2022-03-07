@@ -11,10 +11,14 @@
 <body>
     <script>
         // 3. 过滤敏感词汇， 有一个敏感词数组， 需要将字符串中出现的敏感词替换成四个星号
-        var co = ['共产党','too young too simple','营销'];
-        var s = '共产党不营销只玩真实';
-        
         // ['共产党', 'too young too simple', '营销']
+
+        var Senwords = ['共产党','营销','too young too simple'];
+        function removeSensitiveWords(s,rep){
+            var reg = new RegExp(`(${Senwords.join('|')})+`,'g');
+            return s.replace(reg,rep)
+        }
+        console.log(removeSensitiveWords('共产党营销1515隔热隔热营销','****'));
     </script>
 </body>
 
