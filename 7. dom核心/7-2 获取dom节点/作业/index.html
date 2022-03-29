@@ -36,10 +36,27 @@
     </ul>
 
     <script>
-        // 准备两个数组，分别存放list1和list2中所有超链接的内容
+        // 准备两个数组，分别存放list10和list2中所有超链接的内容
 
         var list1links = [],
             list2links = [];
+
+        function getLinkContents(dom) {
+            return Array.from(dom.querySelectorAll('a')).map(function(a){
+                return a.firstChild.nodeValue
+            });
+            // var arr = dom.querySelectorAll('a');
+            // var newArr = [];
+            // for (var i = 0; i < arr.length; i++) {
+            //     var a = arr[i];
+            //     newArr.push(a.firstChild.nodeValue)
+            // }
+            // return newArr
+        }
+        list1links = getLinkContents(document.getElementById('list1'));
+        console.log(list1links)
+        list2links = getLinkContents(document.getElementById('list2'));
+        console.log(list2links)
     </script>
 </body>
 
