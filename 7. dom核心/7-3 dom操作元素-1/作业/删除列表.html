@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+    </style>
 </head>
+
 <body>
-    
+    <div class="container">
+        <p>
+            <button id="clear">清空</button>
+        </p>
+        <ul id="list">
+            <li>选项1 <button>删除</button></li>
+            <li>选项2 <button>删除</button></li>
+            <li>选项3 <button>删除</button></li>
+            <li>选项4 <button>删除</button></li>
+            <li>选项5 <button>删除</button></li>
+            <li>选项6 <button>删除</button></li>
+            <li>选项7 <button>删除</button></li>
+            <li>选项8 <button>删除</button></li>
+            <li>选项9 <button>删除</button></li>
+            <li>选项10 <button>删除</button></li>
+        </ul>
+    </div>
+
+    <script>
+        var ul = document.getElementById('list');
+        var clearbtn = document.getElementById('clear');
+        clearbtn.onclick = function () {
+            ul.innerHTML = '';
+        }
+
+        var btns = ul.querySelectorAll('button');
+
+        Array.from(btns).forEach(function(b){
+            b.onclick = function(){
+                b.parentElement.remove();
+            }
+        })
+        // for (i = 0; i < btns.length; i++) {
+        //     var b = btns[i];
+        //     // b.onclick = function(){
+        //     //     this.parentNode.remove();
+        //     // }
+        //     // regEvent(b)
+        //     (function(b){
+        //     b.onclick = function(){
+        //         b.parentNode.remove;
+        //     }
+        // }(b));
+        // }
+
+        // function regEvent(btn){
+        //     btn.onclick = function(){
+        //         console.log(btn,btn.parentNode)
+        //     }
+        // }
+    </script>
 </body>
+
 </html>
