@@ -7,7 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
+        span {
+            margin-left: 10px;
+            margin-right: 10px;
+            color: red;
+            font-size: 18px;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -17,19 +23,33 @@
     </p>
     <div>
         库存:
-        <button id="-k">-1000</button>
-        <button id="-h">-100</button>
-        <button id="-t">-10</button>
-        <button id="-">-</button>
-        <span id="num">0</span>
-        <button id="+">+</button>
-        <button id="+t">+10</button>
-        <button id="+h">+100</button>
-        <button id="+k">+1000</button>
+        <button data-plus="-1000">-1000</button>
+        <button data-plus="-100">-100</button>
+        <button data-plus="-10">-10</button>
+        <button data-plus="-1">-</button>
+        <span id="spanNumber">0</span>
+        <button data-plus="1">+</button>
+        <button data-plus="10">+10</button>
+        <button data-plus="100">+100</button>
+        <button data-plus="1000">+1000</button>
     </div>
 
     <script>
-        
+        var btns = document.querySelectorAll('button');
+        var span = document.getElementById('spanNumber');
+        for (var i = 0; i < btns.length; i++) {
+            var b = btns[i];
+            b.onclick = function () {
+                var num = parseInt(span.innerText);
+                var plus = parseInt(this.dataset.plus);
+                var result = num + plus
+                if (result < 0) {
+                    result = 0
+                }
+                span.innerText = result;
+            }
+
+        }
     </script>
 </body>
 
