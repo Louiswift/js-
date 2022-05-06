@@ -64,49 +64,56 @@
     </div>
 
     <script>
+        // 获取按钮
         var btnToRight = document.getElementById('btnToRight'),
             btnToLeft = document.getElementById('btnToLeft'),
-            btnToRightAll = document.getElementById('btnToRightAll'),
-            btnToLeftAll = document.getElementById('btnToLeftAll');
-        var selLeft = document.getElementById('sel1'),
-            selRight = document.getElementById('sel2');
-        
-        // 获取选中的option
-        function getSelectedOptions(sel) {
+            btnToLeftAll = document.getElementById('btnToLeftAll'),
+            btnToRightAll = document.getElementById('btnToRightAll');
+
+        // 获取左右穿梭框
+        var left = document.getElementById(sel1),
+            right = document.getElementById(sel2);
+
+        // 获取选中的Options
+        function getSelectedOption(sel) {
             var opts = [];
             for (var i = 0; i < sel.length; i++) {
-                if (sel.children[i].selected) {
-                    // 判断点击的这个
-                    opts.push(sel.children[i]);
-                    // 将点击的添加到opts数组中
+                if (sel[i].selected) {
+                    opts.push(sel[i])
                 }
             }
             return opts
-            // 返回opts结果
         }
 
-        // 将选中的option添加到另一边的末尾 
-        function btnToher(opts, sel) {
-            for (var i = 0; i < opts.length; i++) {
-                opts[i].selected=false
-                opts = Array.from(opts)
-                sel.appendChild(opts[i]);
-            }
+        // 将opts传入sel中
+        function btnToher(opts,sel){
+            opts = Array.from(opts)
+            for(var i = 0; i <opts.length;i++){
+               sel.appendChild(opts[i])
+           }
         }
 
-        btnToLeft.onclick = function () {
-            var opts = getSelectedOptions(selRight);
-            btnToher(opts,selLeft)
-        }
+        // 右移动选中的
         btnToRight.onclick = function () {
-            var opts = getSelectedOptions(selLeft);
-            btnToher(opts,selRight)
+           var opts = getSelectedOption(sel1);
+           btnToher(opts,sel2)
         }
-        btnToLeftAll.onclick = function () {
-            btnToher(selRight,selLeft)
+
+        // 左移动选中的
+        btnToLeft.onclick = function () {
+           var opts = getSelectedOption(sel2);
+           btnToher(opts,sel1)
         }
+
+        // 右移动全部
         btnToRightAll.onclick = function () {
-            btnToher(selLeft,selRight)
+           btnToher(sel1,sel2)
+        }
+
+        // 左移动全部
+        btnToLeftAll.onclick = function () {
+           var opts = getSelectedOption(sel1);
+           btnToher(sel2,sel1)
         }
     </script>
 </body>

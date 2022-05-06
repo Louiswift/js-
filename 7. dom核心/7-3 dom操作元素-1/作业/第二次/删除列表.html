@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <p>
+            <button id="clear">清空</button>
+        </p>
+        <ul id="list">
+            <li>选项1 <button>删除</button></li>
+            <li>选项2 <button>删除</button></li>
+            <li>选项3 <button>删除</button></li>
+            <li>选项4 <button>删除</button></li>
+            <li>选项5 <button>删除</button></li>
+            <li>选项6 <button>删除</button></li>
+            <li>选项7 <button>删除</button></li>
+            <li>选项8 <button>删除</button></li>
+            <li>选项9 <button>删除</button></li>
+            <li>选项10 <button>删除</button></li>
+        </ul>
+    </div>
+
+    <script>
+        var clearAll = document.getElementById('clear'),
+            ul = document.getElementById('list'),
+            delbtn = ul.querySelectorAll('button');
+
+        clearAll.onclick = function () {
+            ul.innerHTML = '';
+        }
+        for(var i = 0;i<delbtn.length;i++){
+            delbtn[i].onclick=function(){
+                ul.removeChild(this.parentNode)
+            }
+        }
+    </script>
+</body>
+
+</html>

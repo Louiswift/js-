@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .banner {
+            width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            border: 1px solid;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <img src="../img/1.jpeg" alt="">
+        <button id="up">上一张</button>
+        <button id="down">下一张</button>
+    </div>
+
+    <script>
+        // 获取上一张 / 下一张按钮
+        var btnUp = document.getElementById('up'),
+            btnDown = document.getElementById('down');
+
+        var img = document.querySelector('img')
+
+        var i = 1;
+
+        // 切换-上一张
+        btnUp.onclick = function () {
+            i--
+            if (i === 0) {
+                i = 6
+            }
+            img.src = `../img/${i}.jpeg`
+
+        }
+
+        // 切换-下一张
+        btnDown.onclick = function () {
+            i++
+            if (i === 7) {
+                i = 1
+            }
+            img.src = `../img/${i}.jpeg`
+
+        }
+    </script>
+</body>
+
+</html>

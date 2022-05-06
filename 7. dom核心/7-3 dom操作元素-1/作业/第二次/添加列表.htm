@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <style>
+            .container {
+                width: 400px;
+                margin: 0 auto;
+            }
+
+            p {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+<body>
+    <div class="container">
+        <p>不能添加空的文本</p>
+        <div class="input">
+            <input id="text" type="text">
+            <button id="btnAdd">添加</button>
+        </div>
+        <ul id="list">
+            <li>项目1</li>
+            <li>项目2</li>
+        </ul>
+    </div>
+
+    <script>
+        var text = document.getElementById('text'),
+            btnAdd = document.getElementById('btnAdd'),
+            ul = document.getElementById('list');
+        
+        btnAdd.onclick=function(){
+            var li = document.createElement('li');
+            li.innerHTML = text.value;
+            if(li.innerHTML === ''){
+                console.log('请重新输入')
+                return
+            }
+            ul.appendChild(li);
+            text.value ='';
+        }
+    </script>
+</body>
+
+</html>
