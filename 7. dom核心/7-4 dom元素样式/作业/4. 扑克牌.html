@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,32 @@
 
     </style>
 </head>
+
 <body>
     <p>
-        利用pokers文件夹中的图片，用纯JS生成图片依次排序列到页面上。不允许使用样式
+        利用pokers文件夹中的图片,用纯JS生成图片依次排序列到页面上。不允许使用样式
     </p>
+    <div class="container">
+
+    </div>
+
+    <script>
+        var div = document.querySelector('.container');
+        for (var i = 1; i <= 6; i++) {
+            for (var j = 1; j <= 1; j++) {
+                createImg(`pokers/${i}_${j}.jpeg`)
+            }
+        }
+
+        function createImg(src){
+            var img = document.createElement('img');
+            img.src = src;
+            img.style.margin='15px'
+            img.style.width='400px'
+            img.style.height='400px'
+            div.appendChild(img)
+        }
+    </script>
 </body>
+
 </html>

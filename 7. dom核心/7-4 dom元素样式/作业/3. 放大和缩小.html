@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container{
+        .container {
             overflow: hidden;
             border: 2px solid;
             width: 200px;
@@ -19,11 +20,45 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         袁
     </div>
     <button id="zooming">放大</button>
     <button id="reduce">缩小</button>
+
+    <script>
+        // div
+        var div = document.querySelector('.container')
+
+        // 放大按钮
+        var zooming = document.getElementById('zooming');
+        // 缩小按钮
+        var reduce = document.getElementById('reduce');
+
+        zooming.onclick = function () {
+            // 获取原尺寸
+            var size = parseInt(getComputedStyle(div).fontSize);
+            // 设置变大
+            var result = size+10
+            if (result > 200) {
+                result = 200
+            }
+            div.style.fontSize = result+'px'
+        }
+
+        reduce.onclick = function () {
+            // 获取原尺寸
+            var size = parseInt(getComputedStyle(div).fontSize);
+            // 设置变小
+            var result = size-10
+            if (result < 10) {
+                result = 10
+            }
+            div.style.fontSize=result+'px'
+        }
+    </script>
 </body>
+
 </html>

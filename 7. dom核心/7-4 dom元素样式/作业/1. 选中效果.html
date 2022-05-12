@@ -27,7 +27,8 @@
             margin: 0 15px;
             cursor: pointer;
         }
-        span.active{
+
+        span.active {
             color: gold;
         }
     </style>
@@ -46,6 +47,19 @@
             <span>Tempor</span>
         </nav>
     </header>
+
+    <script>
+        var spans = document.querySelectorAll('span');
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].onclick = function () {
+                var span = document.querySelector('span.active');
+                if (span) {
+                    span.classList.remove('active');
+                }
+                this.classList.add('active')
+            }
+        }
+    </script>
 </body>
 
 </html>
