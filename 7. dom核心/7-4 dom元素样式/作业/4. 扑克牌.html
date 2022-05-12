@@ -18,22 +18,27 @@
     <div class="container">
 
     </div>
-
     <script>
         var div = document.querySelector('.container');
+        var imgs = [];
         for (var i = 1; i <= 6; i++) {
-            for (var j = 1; j <= 1; j++) {
-                createImg(`pokers/${i}_${j}.jpeg`)
+            for(var j = 1;j<=1;j++){
+                imgs.push(createImg(`pokers/${i}_${j}.jpeg`));
             }
         }
+        imgs.sort(function(){
+            return Math.random() -0.5
+        })
+        imgs.forEach(function(img){
+            div.appendChild(img)
+        })
 
-        function createImg(src){
+        function createImg(src) {
             var img = document.createElement('img');
             img.src = src;
-            img.style.margin='15px'
-            img.style.width='400px'
-            img.style.height='400px'
-            div.appendChild(img)
+            img.style.width = '200px'
+            img.style.marginLeft = '20px'
+            return img
         }
     </script>
 </body>
