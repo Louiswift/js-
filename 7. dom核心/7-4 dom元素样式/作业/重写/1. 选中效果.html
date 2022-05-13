@@ -47,6 +47,25 @@
             <span>Tempor</span>
         </nav>
     </header>
+
+    <script>
+        // 获取所有span元素
+        var spans = document.querySelectorAll('span');
+        // 循环给span点击事件
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].onclick = function () {
+                // 获取具有active的span
+                var span = document.querySelector('span.active')
+                // 判断是否有active
+                if(span){
+                // 删除active
+                span.classList.remove('active')
+                }
+                // 给当前点击的添加active
+                this.classList.add('active')
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -22,6 +22,24 @@
     </p>
     <div class="container"></div>
 
+
+    <script>
+        // 获取div
+        var div = document.querySelector('.container');
+        // 点击事件
+        div.onclick = function () {
+            // 创建变量 rgb
+            var r = getRandom(0, 255);
+            var g = getRandom(0, 255);
+            var b = getRandom(0, 255);
+            div.style.backgroundColor = `rgb(${r},${g},${b})`
+        };
+
+        // 随机数 min 小 max 大
+        function getRandom(min, max) {
+            return parseInt(Math.random() * (max + 1 - min) + min)
+        }
+    </script>
 </body>
 
 </html>

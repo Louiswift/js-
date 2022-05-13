@@ -25,9 +25,46 @@
     <div class="container">
         袁
     </div>
-    <button id="zooming">放大</button>
-    <button id="reduce">缩小</button>
+    <button id="big">放大</button>
+    <button id="small">缩小</button>
 
+
+    <script>
+        // 获取div
+        var div = document.querySelector('.container');
+        // 获取变大按钮
+        var btnBig = document.getElementById('big')
+        // 获取变小按钮
+        var btnSmall = document.getElementById('small')
+        //点击变大事件
+        btnBig.onclick = function () {
+            // 获取原像素
+            var size = parseInt(getComputedStyle(div).fontSize);
+            // 在原基础上加上10
+            var result = size + 10;
+            // 若字体大小小于或等于10
+            if (result >= 200) {
+                // 给其赋值为10
+                result = 200;
+            }
+            // 设置样式
+            div.style.fontSize = result + 'px';
+        }
+        //点击变大事件
+        btnSmall.onclick = function () {
+            // 获取原像素
+            var size = parseInt(getComputedStyle(div).fontSize);
+            // 在原基础上减去10
+            var result = size - 10;
+            // 若字体大小小于或等于10
+            if (result <= 10) {
+                // 给其赋值为10
+                result = 10;
+            }
+            // 设置样式
+            div.style.fontSize = result + 'px';
+        }
+    </script>
 </body>
 
 </html>
