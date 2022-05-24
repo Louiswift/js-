@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="https://tb.alicdn.com/">
+        <p>
+            <input type="text" name="account">
+        </p>
+        <p>
+            <button>提交</button>
+        </p>
+    </form>
+
+    <a href="https://www.baidu.com/">百度</a>
+
+    <script>
+        var a = document.querySelector('a');
+        var btn = document.querySelector('button');
+        a.addEventListener('click', function (e){
+            e.preventDefault();
+        })
+        btn.addEventListener('click',function(e){
+            e.preventDefault();
+        })
+    </script>
+</body>
+
+</html>
