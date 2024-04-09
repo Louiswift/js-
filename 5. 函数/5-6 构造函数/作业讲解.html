@@ -11,7 +11,8 @@
 <body>
     <script>
         function User(name, fight, fy, hp, baoji) {
-            this.name = name;
+            if(new.target === User){
+                this.name = name;
             this.fight = fight;
             this.fy = fy;
             this.hp = hp;
@@ -25,7 +26,27 @@
                 暴击：${this.baoji}\t
                `)
             }
+            }else{
+                return{
+                    name,
+                    fight,
+                    fy,
+                    hp,
+                    baoji,
+                    sayHello(){
+                        console.log(`
+                我是：${this.name}\t
+                攻击力：${this.fight}\t
+                防御力：${this.fy}\t
+                血量：${this.hp}\t
+                暴击：${this.baoji}\t
+               `)
+                    }
+                }
+            }
+        
         }
+        console.log(User('212',1,1,1,1));
 
         var hero = new User('乐乐', 120, 30, 400, 20);
         hero.sayHello();

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <p>不能添加空的文本</p>
+        <div class="input">
+            <input type="text">
+            <button id="btnAdd">添加</button>
+        </div>
+        <ul id="list">
+            <li>项目1</li>
+            <li>项目2</li>
+        </ul>
+    </div>
+
+    <script>
+       let btn = document.querySelector('#btnAdd');
+           list = document.querySelector('#list');
+           text = document.querySelector('input');
+        
+        btn.addEventListener('click',function(){
+            if(text.value === ''){
+                return
+            };
+            let li = document.createElement('li');
+            li.innerText = text.value;
+            text.value = '';
+            list.appendChild(li);
+        })
+    </script>
+</body>
+
+</html>

@@ -15,31 +15,25 @@
     <p>
         利用pokers文件夹中的图片,用纯JS生成图片依次排序列到页面上。不允许使用样式
     </p>
-    <div class="container">
-
-    </div>
+    <div class="container"></div>
     <script>
-        var div = document.querySelector('.container');
-        var imgs = [];
-        for (var i = 1; i <= 6; i++) {
-            for(var j = 1;j<=1;j++){
-                imgs.push(createImg(`pokers/${i}_${j}.jpeg`));
-            }
+        let div = document.querySelector('.container');
+        let frag = document.createDocumentFragment();
+        let imgs = [];
+
+        for (let i = 1; i <= 6; i++) {
+            let img = document.createElement('img');
+            img.src = `pokers/${i}_1.jpeg`;
+            img.style.width = '200px'
+            imgs.push(img);
         }
         imgs.sort(function(){
-            return Math.random() -0.5
+            return Math.random() - 0.5
         })
-        imgs.forEach(function(img){
-            div.appendChild(img)
+        imgs.forEach(function(item){
+            frag.appendChild(item);
         })
-
-        function createImg(src) {
-            var img = document.createElement('img');
-            img.src = src;
-            img.style.width = '200px'
-            img.style.marginLeft = '20px'
-            return img
-        }
+        div.appendChild(frag)
     </script>
 </body>
 

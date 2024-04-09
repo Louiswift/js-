@@ -23,18 +23,17 @@
     <div class="container"></div>
 
     <script>
-        var div = document.querySelector('.container');
+        let div = document.querySelector('.container');
+        
+        let max = 255;
+        min = 0;
 
-        function getRandom(min, max) {
-            return parseInt(Math.random() * (max + 1 - min) + min);
-        };
-
-        div.onclick = function () {
-            var r = getRandom(0, 255),
-                g = getRandom(0, 255),
-                b = getRandom(0,255);
-                this.style.backgroundColor = `#${r}${g}${b}`;
-        }
+        div.addEventListener('click', () => {
+            let red = parseInt(Math.random() * (max + 1 - min) + min);
+                blue = parseInt(Math.random() * (max + 1 - min) + min);
+                green = parseInt(Math.random() * (max + 1 - min) + min);
+            div.style.background = `rgb(${red},${blue},${green})`;
+        })
     </script>
 </body>
 

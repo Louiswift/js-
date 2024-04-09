@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1
+        let str = "123erbfeiu32w3r2cwfve233443434444444444444411";
+        let arr = [1, 2, 3, 4]
+        let recode = {};
+
+        for (let i = 0; i < str.length; i++) {
+            if (!recode[str[i]]) {
+                recode[str[i]] = 1
+            } else {
+                recode[str[i]]++
+            }
+        }
+        let result1;
+        for (const key in recode) {
+            if (!result1 || result1.fr < recode[key]) {
+                result1 = {
+                    num: key,
+                    fr: recode[key]
+                }
+            }
+        }
+        console.log(result1)
+
+        // 2
+        let s = "hello  world  js";
+        // function bigCamal(s) {
+        // let empy = " \t\n\r";
+        // let result = "";
+        // for (let i = 0; i < s.length; i++) {
+        //     if (!empy.includes(s[i])) {
+        //         if (empy.includes(s[i - 1]) || i === 0) {
+        //             result += s[i].toLocaleUpperCase()
+        //         } else {
+        //             result += s[i]
+        //         }
+        //     }
+        // }
+        // return result
+        // }
+        // console.log(bigCamal(s));
+        function bigCamal(s) {
+            return s.split(" ").filter(function(item,i){
+                return item.length > 0
+            }).map(function(item){
+                return item[0].toLocaleUpperCase() + item.substring(1).toLocaleLowerCase();
+            }).join('');
+
+        }
+        let a = bigCamal(s);
+        console.log(a);
+
+
+
+        // 3
+        function randomStr(len) {
+           let r = '';
+           for(let i = 65; i < 65 + 26; i++){
+            r += String.fromCharCode(i)
+           }
+           for(let i = 97; i < 97 + 26; i++){
+            r += String.fromCharCode(i)
+           }
+           for(let i = 48; i < 48 + 10; i++){
+            r += String.fromCharCode(i)
+           }
+           let result = '';
+           for(let i = 0; i < len; i++){
+           let num = parseInt(Math.random() * r.length);
+           result += r[num];
+           }
+           console.log(result)
+        }
+        randomStr(20)
+
+        // 4
+        let str1 = "fwmeniofhnweiofw";
+        str1 = Array.from(str1).sort().reverse().join();
+        console.log(str1)
+
+
+
+        // 5
+        function isOdd(n) {
+            return n % 2 !== 0
+        }
+        let idCard = "610831200408110616";
+        let info = {
+            birthDay: idCard.slice(6, 10),
+            birthMonth: idCard.slice(10, 12),
+            birthday: idCard.slice(12, 14),
+            gender: isOdd(idCard.slice(16, 17)) ? "男" : "女"
+        }
+        console.log(info);
+    </script>
+</body>
+
+</html>

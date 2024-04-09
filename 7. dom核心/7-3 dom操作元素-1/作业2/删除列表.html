@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>
+            <button id="clear">清空</button>
+        </p>
+        <ul id="list">
+            <li>选项1 <button>删除</button></li>
+            <li>选项2 <button>删除</button></li>
+            <li>选项3 <button>删除</button></li>
+            <li>选项4 <button>删除</button></li>
+            <li>选项5 <button>删除</button></li>
+            <li>选项6 <button>删除</button></li>
+            <li>选项7 <button>删除</button></li>
+            <li>选项8 <button>删除</button></li>
+            <li>选项9 <button>删除</button></li>
+            <li>选项10 <button>删除</button></li>
+        </ul>
+    </div>
+
+    <script>
+        let btnClear = document.querySelector("#clear");
+            list = document.querySelector("#list");
+            
+        
+        btnClear.addEventListener('click',function(){
+            list.innerHTML = '';
+        })
+        
+        let btns = document.querySelectorAll("button");
+        // btns.forEach(function(btn){
+        //     btn.addEventListener('click',function(){
+        //         this.parentElement.remove();
+        //     })
+        // })
+        btns = Array.from(btns);
+        btns.map(function(btn){
+            btn.addEventListener('click',function(){
+                this.parentElement.remove();
+            })
+        })
+    </script>
+</body>
+</html>

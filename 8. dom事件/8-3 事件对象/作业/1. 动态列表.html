@@ -10,10 +10,10 @@
 
 <body>
     <p>
-        <input type="text">
-        <button>添加</button>
+        <input type="text" id="text">
+        <button id="addBtn">添加</button>
     </p>
-    <ul>
+    <ul id="ul">
         <li>
             <span>列表1</span>
             <button>删除</button>
@@ -29,10 +29,30 @@
     </ul>
 
     <script>
-        var p = document.querySelector('button');
-        p.onclick=function(e){
-            e.target();
-        }
+        var text = document.getElementById('text'),
+            addBtn = document.getElementById('addBtn');
+        var ul = document.getElementById('ul');
+
+        addBtn.addEventListener('click', function () {
+            var li = document.createElement('li');
+            span = document.createElement('span');
+            button = document.createElement('button');
+            span.innerText = text.value;
+            button.innerText = '删除';
+            li.appendChild(span);
+            li.appendChild(button)
+            if (text.value == '') {
+                return
+            }
+            text.value = '';
+            ul.appendChild(li)
+        });
+
+        ul.addEventListener('click', function (e) {
+            if(e.target.tagName == 'BUTTON'){
+                e.target.parentElement.remove();
+            }
+        })
     </script>
 </body>
 

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+         *  判断一个数是不是闰年
+         * @param {number} n 判断的数字
+         * @returns 返回的结果
+         */
+        function isLeap(n) {
+            return n % 4 === 0 || n % 400 === 0
+        }
+
+        /**
+         * 得到某年某月的天数
+         * @param {*} year 
+         * @param {*} month 
+         */
+        function isOdd(n) {
+            return n % 2 !== 0
+        }
+
+        function getDays(year, month) {
+            if (month === 2) {
+                return isLeap(year) ? 29 : 28;
+            } else if (month < 8 && isOdd(month) || month >= 8 && !isOdd(month)) {
+                return 31;
+            } else {
+                return 30;
+            }
+        }
+
+        function yhDate(date) {
+            let year = date.getFullYear();
+            let month = date.getMonth().toString().padStart(2, "0");
+            let day = date.getDay().toString().padStart(2, "0");
+            let hour = date.getHours().toString().padStart(2, "0");
+            let min = date.getMinutes().toString().padStart(2, "0");
+            let second = date.getSeconds().toString().padStart(2, "0");
+            console.log(`${year}-${month}-${day} ${hour}:${min}:${second}`)
+        }
+        yhDate(new Date());
+        let date = new Date();
+        let a = date.toLocaleString().split('/').join('-');
+        console.info(a)
+
+        function birth(y, m, d) {
+            let now = new Date();
+            let dec = now.getFullYear() - y;
+            let bitrhDay = new Date(now.getFullYear(), m - 1, d);
+            console.info(bitrhDay)
+            if (bitrhDay > now) {
+                dec--
+            }
+            return dec
+        }
+        console.log(birth(2004, 8, 11));
+
+
+
+        function print() {
+            let now = new Date();
+                month = now.getMonth() + 1;
+                year = now.getFullYear();
+                let d = getDays(year,month);
+            
+            console.log(year);
+            console.log(month);
+            console.log("==================")
+            for(let i = 1; i <= d; i++){
+                console.log(`${year}年${month}月${i}日星期${new Date(year,month,i).getDay()}`)
+            }
+        }
+        print()
+    </script>
+</body>
+
+</html>

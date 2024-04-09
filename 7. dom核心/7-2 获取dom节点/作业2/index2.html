@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li><a href="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum eos omnis officiis suscipit. Quis incidunt eaque consequatur. Consectetur, at vel fugit eaque distinctio non sunt nobis fugiat, eligendi dolore deleniti!</a></li>
+            <li><a href="">Ex, molestiae quo! Ducimus sequi quam a doloremque quidem aspernatur, harum repellendus earum nisi repellat nam voluptas iusto, adipisci laborum eos iste vero ratione porro provident possimus nostrum. Ipsum, dignissimos!</a></li>
+            <li><a href="">Aut, amet ex! Numquam nobis rem aperiam minima dignissimos. At modi nesciunt aspernatur similique ut maiores. Sapiente cum perferendis quasi porro unde consequuntur sunt harum, ipsum corporis aut corrupti quidem.</a></li>
+            <li><a href="">Labore quidem est nesciunt et, vitae recusandae minus, maxime aspernatur, eveniet cumque corrupti cupiditate autem beatae? Minus cum quos, a sunt excepturi velit expedita commodi repellat! Possimus pariatur dignissimos eaque.</a></li>
+            <li><a href="">Repellat facilis quidem nesciunt ipsam praesentium est natus, architecto fugiat cumque ratione eos, animi illo vitae rerum fuga cupiditate, consequuntur assumenda quas sed? Dolore dignissimos consectetur mollitia cum, qui eius?</a></li>
+            <li><a href="">Placeat id doloremque dolorem deserunt, tempore dignissimos enim eveniet illo veniam quae labore? Commodi esse enim minus fugiat iure, non aliquid, eaque rerum, ad iste exercitationem. Dolorum fugit assumenda quam?</a></li>
+            <li><a href="">Suscipit repudiandae beatae cum ea eaque, quam laboriosam fugiat adipisci magnam! Incidunt hic deserunt distinctio obcaecati aut corrupti nesciunt. Eius porro unde voluptas magnam, dicta itaque quidem doloremque fugit saepe!</a></li>
+            <li><a href="">Provident ut recusandae ratione odit id nobis repellendus dolore corrupti quibusdam tempore ipsam, at ad, laboriosam, atque praesentium omnis ipsum sed quaerat harum corporis qui saepe nisi numquam rem. Velit!</a></li>
+            <li><a href="">Consectetur praesentium possimus voluptatem obcaecati error ullam atque quibusdam, commodi saepe libero natus? Asperiores, esse. Impedit dolore libero eveniet, accusamus, aliquid quis fuga quaerat numquam, adipisci nesciunt saepe molestiae rem.</a></li>
+            <li><a href="">Dolore porro at beatae recusandae nihil alias officia, corrupti maiores facilis qui enim iusto nostrum similique repellendus assumenda eaque quod explicabo excepturi, aliquid voluptate, rem quasi? Natus error suscipit voluptatibus?</a></li>
+        </ul>
+    </div>
+
+    <div class="container2">
+        <span>ewfew</span>
+        <strong>ewrgfergerg</strong>
+        <i>wenifer</i>
+        <p>feriofngbeuiofbne</p>
+        <div class="c3">
+            <p>fniwefgwer</p>
+        </div>
+
+        <script>
+            // 写一个函数，传入一个dom对象，返回该对象的第一个div容器
+            function divPar(dom){
+                // let a = dom.parentElement;
+                // console.log(a)
+                //     while(a.nodeName !== "DIV"){
+                //         a = a.parentElement
+                //     }
+                //     return a
+                for(var a = dom.parentElement; a.nodeName !== "DIV"; a = a.parentElement){}
+                return a
+            }
+            let p = document.querySelector("p");
+            let b = divPar(p);
+            console.log(b)
+
+        </script>
+
+
+    </div>
+</body>
+</html>

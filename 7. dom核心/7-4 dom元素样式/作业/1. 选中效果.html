@@ -49,16 +49,16 @@
     </header>
 
     <script>
-        var spans = document.querySelectorAll('span');
-        for (var i = 0; i < spans.length; i++) {
-            spans[i].onclick = function () {
-                var span = document.querySelector('span.active');
+        let nav = document.querySelector('nav');
+        Array.from(nav.children).forEach(function (item) {
+            item.onclick = function () {
+                let span = document.querySelector('span.active');
                 if (span) {
                     span.classList.remove('active');
                 }
-                this.classList.add('active')
+                this.classList.add('active');
             }
-        }
+        })
     </script>
 </body>
 

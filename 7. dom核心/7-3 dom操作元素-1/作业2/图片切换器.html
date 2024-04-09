@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../1.jpeg" alt="">
+    <button id="pr">上一张</button>
+    <button id="next">下一张</button>
+
+    <script>
+        let i = 1;
+        let img = document.querySelector('img');
+        let pr = document.querySelector('#pr');
+        let next = document.querySelector('#next');
+
+        pr.addEventListener('click', function () {
+            i--
+            if(i === 0){
+                i = 2;
+            };
+            img.src = `../${i}.jpeg`;
+
+        })
+        next.addEventListener('click', function () {
+            i++
+            if (i === 3) {
+                i = 1;
+            };
+            img.src = `../${i}.jpeg`;
+        })
+    </script>
+</body>
+
+</html>

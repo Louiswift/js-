@@ -29,35 +29,28 @@
     <button id="reduce">缩小</button>
 
     <script>
-        // div
-        var div = document.querySelector('.container')
-
-        // 放大按钮
-        var zooming = document.getElementById('zooming');
-        // 缩小按钮
-        var reduce = document.getElementById('reduce');
-
-        zooming.onclick = function () {
-            // 获取原尺寸
-            var size = parseInt(getComputedStyle(div).fontSize);
-            // 设置变大
-            var result = size+10
-            if (result > 200) {
-                result = 200
+        let zooming = document.querySelector('#zooming');
+        let reduce = document.querySelector('#reduce');
+        let div = document.querySelector('.container');
+        function jq(dom) {
+            let fontSize = getComputedStyle(dom).fontSize;
+            let str = '';
+            for (let i = 0; i < fontSize.length; i++) {
+                if (i < fontSize.length - 2) {
+                    str += fontSize[i];
+                }
             }
-            div.style.fontSize = result+'px'
+            fontSize = +str;
+            return fontSize
         }
-
-        reduce.onclick = function () {
-            // 获取原尺寸
-            var size = parseInt(getComputedStyle(div).fontSize);
-            // 设置变小
-            var result = size-10
-            if (result < 10) {
-                result = 10
-            }
-            div.style.fontSize=result+'px'
-        }
+        zooming.addEventListener('click', () => {
+            let fontSize = jq(div);
+            div.style.fontSize = `${fontSize + 20}px`;
+        });
+        reduce.addEventListener('click', () => {
+            let fontSize = jq(div);
+            div.style.fontSize = `${fontSize - 20}px`;
+        });
     </script>
 </body>
 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 英雄打怪兽小游戏
+        function User(name, gjl, fy, hp, bj) {
+            this.name = name;
+            this.gjl = gjl;
+            this.fy = fy;
+            this.hp = hp;
+            this.bj = bj;
+            this.sayHello = function () {
+                console.log(`角色：${this.name}\t
+攻击力：${this.gjl}\t
+防御力：${this.fy}\t
+血量：${this.hp}\t
+暴击：${this.bj}\t
+                `)
+            }
+            
+            
+        }
+
+        let hero = new User('英雄', 30, 20, 100, 0.3);
+        let gs = new User('怪兽', 25, 25, 100, 0.2);
+    </script>
+</body>
+
+</html>

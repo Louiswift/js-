@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            overflow: hidden;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .container .left {
+            float: left;
+            margin: 0 30px;
+        }
+
+        .container select {
+            width: 100%;
+            height: 200px;
+        }
+
+        .container.mid {
+            padding-top: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <h2>成哥现任女友</h2>
+            <select id="sel1" multiple>
+                <option value="1">幂幂</option>
+                <option value="2">花花</option>
+                <option value="3">绿绿</option>
+                <option value="4">吱吱</option>
+                <option value="5">呃呃</option>
+            </select>
+        </div>
+        <div class="left mid">
+            <p>
+                <button id="btnToRight" title="右移动选中的">&gt;</button>
+            </p>
+            <p>
+                <button id="btnToRightAll" title="右移动全部">&gt;&gt;</button>
+            </p>
+            <p>
+                <button id="btnToLeft" title="左移动选中的">&lt;</button>
+            </p>
+            <p>
+                <button id="btnToLeftAll" title="左移动全部">&lt;&lt;</button>
+            </p>
+        </div>
+        <div class="left">
+            <h2>成哥的前女友</h2>
+            <select id="sel2" multiple>
+                <option value="6">坤坤</option>
+            </select>
+        </div>
+    </div>
+
+    <script>
+        let sel1 = document.querySelector('#sel1');
+        let sel2 = document.querySelector('#sel2');
+        function selectUl(s1) {
+            let opts = [];
+            Array.from(s1.children).forEach(function (item) {
+                if (item.selected) {
+                    opts.push(item);
+                }
+            })
+            return opts
+        }
+
+        function ydAll(opts, s) {
+            Array.from(opts).forEach(function (item) {
+                s.appendChild(item);
+            });
+        }
+
+        let right = document.querySelector('#btnToRight');
+        let left = document.querySelector('#btnToLeft');
+        right.addEventListener('click', () => {
+            ydAll(selectUl(sel1),sel2);
+        })
+        left.addEventListener('click', () => {
+            ydAll(selectUl(sel2),sel1);
+        })
+        let leftAll = document.querySelector('#btnToLeftAll');
+        let rightAll = document.querySelector('#btnToRightAll');
+
+        leftAll.addEventListener('click', () => {
+            ydAll(sel2, sel1)
+        });
+        rightAll.addEventListener('click', () => {
+            ydAll(sel1, sel2)
+        })
+    </script>
+</body>
+
+</html>
