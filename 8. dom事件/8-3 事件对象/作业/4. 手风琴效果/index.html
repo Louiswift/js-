@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #list {
+            width: 200px;
+            background-color: aquamarine;
+        }
+
+        #list span {
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: goldenrod;
+        }
+
+        #list ul{
+            transition: 2s;
+        }
+
+        .show {
+            display: block;
+        }
+
+        #content{
+            display: none;
+            transition: display 0.5s ease;
+        }
+
+        #list ul li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="list"></ul>
+    <script>
+        let ul = document.querySelector('#list');
+        let menu = [
+            {
+                name: '菜单一',
+                children: ['商品一', '商品二', '商品三', '商品四']
+            },
+            {
+                name: '菜单二',
+                children: ['物品一', '物品二', '物品三', '物品四']
+            },
+            {
+                name: '菜单三',
+                children: ['东西一', '东西二', '东西三', '东西四']
+            }
+        ];
+        menu.forEach(function (item, i) {
+            let li = document.createElement('li');
+            li.innerHTML = `<span>${item.name}</span><ul></ul>`;
+            ul.appendChild(li)
+
+            let childUl = document.querySelectorAll('#list li ul');
+
+            item.children.forEach(function (childrenUl) {
+                childUl[i].innerHTML += `<li>${childrenUl}</li>`;
+            })
+        })
+
+        ul.addEventListener('click', (e) => {
+            if (e.target.tagName === 'SPAN') {
+                let childrenUl = e.target.nextElementSibling;
+                let style = getComputedStyle(childrenUl);
+
+                if (style.display === 'block') {
+                    e.target.nextElementSibling.style.display = 'none'
+                } else {
+                    e.target.nextElementSibling.style.display = 'block'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <a data-content='1' href="">首页</a>
+        <a data-content='2' href="">主页</a>
+        <a data-content='3' href="">分页</a>
+        <a data-content='4' href="">尾页</a>
+    </div>
+    <div class="content">
+        <img src='' alt="">
+    </div>
+
+    <script>
+        let a = document.querySelector('.container');
+        let img = document.querySelector('.content img');
+        img.src = '../2. 更换图片/img/1.jpg';
+        img.style.width = '300px';
+        a.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                e.preventDefault();
+
+                switch (e.target.dataset.content) {
+                    case '1':
+                        console.log(e.target.dataset.content);
+                        img.src = `../2. 更换图片/img/${e.target.dataset.content}.jpg`;
+                        break;
+                    case '2':
+                        console.log(e.target.dataset.content);
+                        img.src = `../2. 更换图片/img/${e.target.dataset.content}.jpg`;
+                        break;
+                    case '3':
+                        console.log(e.target.dataset.content);
+                        img.src = `../2. 更换图片/img/${e.target.dataset.content}.jpg`;
+                        break;
+                    case '4':
+                        console.log(e.target.dataset.content);
+                        img.src = `../2. 更换图片/img/${e.target.dataset.content}.jpg`;
+                        break;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

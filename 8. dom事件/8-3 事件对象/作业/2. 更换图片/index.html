@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container"></div>
+    <div class="img"></div>
+
+    <script>
+        let imgs = [
+            'img/1.jpg',
+            'img/2.jpg',
+            'img/3.jpg',
+            'img/4.jpg'
+        ];
+        let div = document.querySelector('.container');
+        let frag1 = document.createDocumentFragment();
+        Array.from(imgs).forEach(function (item, i) {
+            let button = document.createElement('button');
+            button.innerText = `第${i + 1}张图片`;
+            // button.setAttribute(`data-img`, item);
+            button.dataset.src = item;
+            frag1.appendChild(button);
+        });
+        div.appendChild(frag1)
+
+        let divImg = document.querySelector('.img');
+        let img = document.createElement('img');
+        img.src = imgs[0];
+        img.style.width = '300px';
+
+        div.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                img.src = e.target.dataset.src;
+            }
+        })
+        divImg.appendChild(img)
+
+    </script>
+</body>
+
+</html>

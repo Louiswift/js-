@@ -3,56 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 
 <body>
-    <p>
-        <input type="text" id="text">
-        <button id="addBtn">添加</button>
-    </p>
-    <ul id="ul">
-        <li>
-            <span>列表1</span>
-            <button>删除</button>
-        </li>
-        <li>
-            <span>列表2</span>
-            <button>删除</button>
-        </li>
-        <li>
-            <span>列表3</span>
-            <button>删除</button>
-        </li>
+    <input type="text">
+    <button id="addBtn">添加</button>
+    <ul id="list">
+        <li>列表1 <button>删除</button></li>
+        <li>列表2 <button>删除</button></li>
+        <li>列表3 <button>删除</button></li>
     </ul>
 
     <script>
-        var text = document.getElementById('text'),
-            addBtn = document.getElementById('addBtn');
-        var ul = document.getElementById('ul');
+        let list = document.querySelector("#list");
+        let btn = document.querySelector("#addBtn");
+        let text = document.querySelector("input");
+        let btns = document.querySelectorAll('#list button');
+        console.log(btns)
 
-        addBtn.addEventListener('click', function () {
-            var li = document.createElement('li');
-            span = document.createElement('span');
-            button = document.createElement('button');
-            span.innerText = text.value;
-            button.innerText = '删除';
-            li.appendChild(span);
-            li.appendChild(button)
-            if (text.value == '') {
-                return
+        btn.addEventListener("click", function (e) {
+            if (text.value !== '') {
+                let li = document.createElement("li");
+                let button = document.createElement('button');
+                li.innerText = text.value;
+                button.innerText = '删除';
+                li.appendChild(button);
+                list.appendChild(li);
+                text.value = '';
             }
-            text.value = '';
-            ul.appendChild(li)
         });
 
-        ul.addEventListener('click', function (e) {
-            if(e.target.tagName == 'BUTTON'){
+        list.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
                 e.target.parentElement.remove();
             }
         })
+
     </script>
 </body>
 
