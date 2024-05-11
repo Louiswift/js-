@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list {
+            float: left;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+
+        .txt {
+            float: left;
+            height: 50px;
+            line-height: 50px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="list">
+        <img src="../img/deep.png" alt="">
+        <img src="../img/deep.png" alt="">
+        <img src="../img/deep.png" alt="">
+        <img src="../img/deep.png" alt="">
+        <img src="../img/deep.png" alt="">
+    </div>
+    <div class="txt">很差</div>
+
+    <script>
+        let deep = '../img/deep.png';
+        let light = '../img/light.png';
+        let words = ['满意', '一般', '还不错', '很满意', '非常满意'];
+        let star = 0;
+        let div = document.querySelector('#list');
+        let txt = document.querySelector('.txt');
+
+        div.onmouseover = function (e) {
+            if (e.target.tagName === 'IMG') {
+                e.target.src = light;
+                let prev = e.target.previousElementSibling;
+                while (prev) {
+                    prev.src = light;
+                    prev = prev.previousElementSibling;
+                }
+
+                let next = e.target.nextElementSibling;
+                while (next) {
+                    next.src = deep;
+                    next = next.nextElementSibling;
+                }
+                let index = Array.from(div.children).indexOf(e.target);
+                txt.innerText = words[index];
+            }
+        }
+
+        div.onclick = function (e) {
+            if (e.target.tagName === 'IMG') {
+                let index = Array.from(div.children).indexOf(e.target);
+                star = index;
+                console.log(index)
+            }
+        }
+
+        div.onmouseleave = function (e) {
+            // if (star === 0) {
+            //     for (let i = 0; i < div.children.length; i++) {
+            //         div.children[i].src = deep;
+            //     }
+            //     txt.innerText = '';
+            // } else {
+            //     let index = star - 1;
+            //     txt.innerText = words[index];
+            //     for (let i = 0; i < div.children.length; i++) {
+            //         if(i <= index){
+            //             div.children[i].src = light;
+            //         }else{
+            //             div.children[i].src = deep;
+            //         }
+            //     }
+            // }
+            txt.innerText = words[star];
+            for (let i = 0; i < div.children.length; i++) {
+                if (i <= star) {
+                    console.log(i) 
+                    div.children[i].src = light;
+                    if (i === 0) {
+                        div.children[i].src = deep;
+                        txt.innerText = words[i];
+                    }
+                } else {
+                    div.children[i].src = deep;
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

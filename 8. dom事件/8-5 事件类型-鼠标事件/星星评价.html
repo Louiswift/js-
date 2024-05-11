@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #list {
+            float: left;
+            width: 150px;
+            height: 50px;
+            background-color: rgb(104, 94, 94);
+            display: flex;
+            list-style: none;
+        }
+
+        #list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        #list li img {
+            width: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="list">
+        <li>
+            <img src="img/deep.png" alt="">
+        </li>
+        <li>
+            <img src="img/deep.png" alt="">
+        </li>
+        <li>
+            <img src="img/deep.png" alt="">
+        </li>
+        <li>
+            <img src="img/deep.png" alt="">
+        </li>
+        <li>
+            <img src="img/deep.png" alt="">
+        </li>
+    </ul>
+    <span></span>
+
+    <script>
+        let list = document.querySelector('#list');
+        let deep = "img/deep.png";
+        let light = "img/light.png";
+        let listChild = Array.from(list.children);
+        let span = document.querySelector('span');
+
+
+        listChild.forEach(function (item,i) {
+            let arr = ['特别差','差','中等','良','优秀'];
+            item.children[0].dataset.img = i;
+            item.children[0].dataset.txt = arr[i];
+        })
+
+        list.onmouseenter = function (e) {
+            list.onmousemove = function (e) {
+                if (e.target.tagName === 'IMG') {
+                    for(let i = +e.target.dataset.img; i >= 0; i--){
+                        listChild[i].children[0].src = light;
+                        span.innerText = e.target.dataset.txt;
+                    }
+                    for(let i = 4; i > +e.target.dataset.img; i--){
+                        listChild[i].children[0].src = deep;
+                    }
+
+                    list.onmousedown = function (e) {
+                        if (e.button === 0) {
+                            e.target.src = light;
+                            list.onmouseleave = null;
+                            list.onmousemove = null;
+                            list.onmouseenter = null;
+                        }
+                    }
+                    e.target.src = light;
+                }
+            }
+        }
+        list.onmouseleave = function (e) {
+            listChild.forEach(function (item) {
+                let img = item.children[0];
+                img.src = e.target.src = deep;
+                span.innerText = '';
+            })
+        }
+    </script>
+
+</body>
+
+</html>

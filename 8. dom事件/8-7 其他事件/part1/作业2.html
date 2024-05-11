@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="sel">
+        <option value="2">一</option>
+        <option value="1">二</option>
+        <option value="3">三</option>
+        <option value="4">四</option>
+        <option value="5">五</option>
+        <option value="6">六</option>
+        <option value="7">七</option>
+        <option value="8">八</option>
+        <option value="9">九</option>
+        <option value="10">十</option>
+        </select>
+
+            <input type="text">
+
+        <script>
+            sel.onchange = function() {
+                console.log(sel.options[sel.selectedIndex].innerHTML,sel.selectedIndex);
+            };
+
+            
+            let inp = document.querySelector('input');
+            inp.oninput = function(e) {
+                if(!this.value.trim()){
+                    console.log('请输入内容');
+                    return;
+                }
+                console.log(this.value);
+            };
+        </script>
+</body>
+
+</html>

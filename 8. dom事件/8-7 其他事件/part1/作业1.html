@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .noinput {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" class="noinput" value="请输入关键字">
+    </div>
+
+    <script>
+        let input = document.querySelector('input');
+
+        input.addEventListener('focus', (e) => {
+            if (input.value === input.defaultValue && input.className === 'noinput') {
+                input.value = '';
+                input.className = '';
+            }
+        });
+
+        input.addEventListener('blur', (e) => {
+            if (!input.value) {
+                input.value = '请输入关键字';
+                input.className = 'noinput';
+            }
+        })
+
+    </script>
+</body>
+
+</html>

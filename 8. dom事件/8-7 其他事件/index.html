@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            width: 300px;
+            height: 300px;
+            overflow: auto;
+            background-color: red ;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quidem eius enim quas omnis quia quae suscipit deserunt in minus sequi sed, nobis dolor delectus possimus? Velit iure aliquid voluptate.
+        Eveniet veniam cupiditate voluptas! Ipsum quod blanditiis aliquam assumenda quo magni quis esse commodi illum repellat quidem repudiandae laboriosam consectetur pariatur nam beatae dolor adipisci culpa nostrum, iusto vel. Soluta!
+        Tenetur veniam dolorum quidem dolor reiciendis! Suscipit repudiandae obcaecati rerum inventore magnam sunt vel itaque, a doloribus et consequuntur neque natus. Quidem voluptatum sed facilis harum fuga alias tempore repudiandae!
+        Corrupti consequatur eos consectetur harum! Asperiores voluptates amet non laboriosam totam, omnis assumenda eligendi praesentium placeat impedit dolorem magnam nihil eaque, veritatis odio ea, ratione consequatur quaerat incidunt. Vel, aliquid?
+        Voluptatibus ab atque laudantium ullam, quos odio placeat, id pariatur ducimus mollitia autem natus optio dolore. Numquam quod voluptatibus perferendis quasi consequatur totam maxime soluta, reiciendis quas dolore, officia consequuntur!
+    </p>
+
+    <!-- <textarea></textarea> -->
+    
+    <script>
+        let div = document.querySelector('p');
+        let text = document.querySelector('textarea');
+        
+        div.oncontextmenu = (e) => {
+            e.preventDefault();
+        }
+
+        // text.onpaste = (e) => {
+        //     let clipboardData = e.clipboardData || window.clipboardData;
+        //     let data = clipboardData.getData('text/plain');
+        //     data = "来自于粘贴" + data;
+        //     console.log(data)
+        //     clipboardData.setData("text/plain", data);
+        //     clipboardData.clearData("text/plain");
+        // }'
+
+    </script>
+</body>
+</html>
