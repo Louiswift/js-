@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 100px;
+            position: absolute;
+            left: 0;
+        }
+
+        button {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <button>开始</button>
+    <button>暂停</button>
+
+    <script>
+        let div = document.querySelector('div');
+        btn = document.querySelectorAll('button');
+
+        let timer;
+        btn[0].onclick = () => {
+            console.log('开始');
+            let l = div.offsetLeft;
+            timer = setInterval(() => {
+                l++;
+                div.style.left = l + 'px';
+            }, 10);
+        }
+
+        btn[1].onclick = () => {
+            console.log('暂停');
+            clearInterval(timer);
+        }
+    </script>
+</body>
+
+</html>

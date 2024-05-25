@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh - 200px;
+            font-size: 50px;
+            background-color: #000;
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        倒计时: <span id="spanclock">5</span>
+    </p>
+    <p>
+        点击数: <span id="spannum">0</span>
+    </p>
+    <div>
+        <button id="btnadd">点击</button>
+        <button id="btnreset">重置</button>
+    </div>
+
+    <script>
+        let btnAdd = document.querySelector("#btnadd"),
+            btnReset = document.querySelector("#btnreset"),
+            spanClock = document.querySelector("#spanclock"),
+            spanNum = document.querySelector("#spannum"),
+            num = 0,
+            clock = 5,
+            isOver = false,
+            timer;
+
+        btnAdd.onclick = () => {
+            if (num === 0) {
+                setClock();
+            }
+            if (!isOver) {
+                setCounter(num + 1);
+            }
+        }
+
+        btnReset.onclick = () => {
+            setCounter(0);
+            clock = 5;
+            spanClock.innerText = clock; 
+            isOver = false;
+        }
+
+        function setCounter(n) {
+            num = n;
+            spanNum.innerText = num;
+        }
+
+        function setClock() {
+            if (timer) {
+                return;
+            }
+            timer = setInterval(function () {
+                clock--;
+                spanClock.innerText = clock;
+                if (clock === 0) {
+                    clearInterval(timer);
+                    timer = null;
+                    isOver = true;
+                }
+
+            }, 1000)
+        }
+    </script>
+</body>
+
+</html>

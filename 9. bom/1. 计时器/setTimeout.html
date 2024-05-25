@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击开始</button>
+
+    <button>清除计时器</button>
+    <h1>120</h1>
+
+    <script>
+        let btn = document.querySelectorAll('button');
+        let h1 = document.querySelector('h1');
+        let timer, timer1;
+
+        btn[0].onclick = () => {
+            timer = setTimeout(() => {
+                console.log("开始咯");
+            }, 3000);
+            timer1 = setTimeout(() => {
+                console.log("开始咯");
+            }, 3000);
+            console.log(timer, timer1)
+            console.log("点击啦");
+        }
+
+        btn[1].onclick = () => {
+            clearTimeout(timer)
+            clearTimeout(timer1)
+        }
+
+        let timer3;
+        // btn[0].onclick = () => {
+        //    timer3 = setInterval(() => {
+        //         console.log("开始咯");
+        //         h1.innerText--;
+        //         console.log(h1.innerText);
+        // if(h1.innerText === '0'){
+        //     console.log('倒计时结束')
+        //     clearInterval(timer3)
+        // }
+
+        //     }, 1000);
+        // }
+        btn[0].onclick = () => {
+            timer3 = interval(function () {
+                h1.innerHTML--;
+                if(h1.innerHTML <= '0'){
+                    h1.innerHTML = "倒计时结束";
+                    clearTimeout(timer3)
+                }
+            }, 1000)
+
+        }
+
+        function interval(callback, time) {
+            setTimeout(() => {
+                callback();
+                interval(callback, time);
+            }, time);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

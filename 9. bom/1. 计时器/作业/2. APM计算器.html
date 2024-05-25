@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #000;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 100px;
+        }
+
+        button {
+            font-size: 50px;
+            margin: 0 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>倒计时：<span>60</span></h1>
+    <h1>点击数: <span>0</span></h1>
+    <div class="btns">
+        <button>点击</button>
+        <button>重置</button>
+    </div>
+
+    <script>
+        let spans = document.querySelectorAll('span');
+        let btns = document.querySelectorAll('button');
+        let timer;
+        let num;
+
+        btns[0].onclick = () => {
+            spans[1].innerHTML++;
+            if (timer) {
+                return;
+            }
+            timer = setInterval(function () {
+                num = spans[0].innerHTML--;
+                if (num === 1) {
+                    console.log('end')
+                    spans[0].innerHTML = 0;
+                    btns[0].onclick = null;
+                    clearInterval(timer);
+                }
+            }, 1000)
+        }
+
+        btns[1].onclick = () => {
+            clearInterval(timer);
+            timer = null;
+            spans[0].innerHTML = 60;
+            spans[1].innerHTML = 0;
+        }
+
+        function setCount (n){
+            
+        }
+    </script>
+</body>
+
+</html>

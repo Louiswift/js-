@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 100px);
+            font-size: 80px;
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+
+    <script>
+        let h1 = document.querySelector('h1');
+        
+        function setTime(){
+            let data = new Date();
+            h1.innerHTML = `${data.getFullYear()}-${(data.getMonth() + 1).toLocaleString().padStart(2,'0')}-${data.getDate()}-${data.getHours().toLocaleString().padStart(2,'0')}:${data.getMinutes().toLocaleString().padStart(2,'0')}:${data.getSeconds().toLocaleString().padStart(2,'0')}`;
+        }
+
+        setInterval(setTime, 1000);
+    </script>
+</body>
+</html>
